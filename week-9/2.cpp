@@ -13,22 +13,28 @@ int main()
         ll n;
         cin>>n;
         vector<ll>a(n);
-        ll distinct=0;
-        map<ll,ll>mp;
         for(ll i=0; i<n; i++)
         {
             cin>>a[i];
-            mp[a[i]]++;
-
         }
-        distinct=mp.size();
+        ll cnt=0;
+        ll sum=0;
         if(n==1)
         {
             cout<<"NO"<<endl;
             continue;
         }
-        ll q=(n/2)+(n%2);
-        if(q<distinct)
+        for(ll i=0;i<n;i++)
+        {
+            if(a[i]==1)
+            {
+                cnt++;
+
+            }
+            sum+=a[i];
+        }
+        sum-=n;
+        if(sum>=cnt)
         {
             cout<<"YES"<<endl;
         }
@@ -36,6 +42,7 @@ int main()
         {
             cout<<"NO"<<endl;
         }
+
 
     }
     return 0;
