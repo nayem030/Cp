@@ -41,6 +41,7 @@ int main()
             }
         }
         sort(b.begin(),b.end());
+        cout<<b.size()<<" "<<c.size()<<endl;
         for(auto it:b)
         {
             cout<<it<<" ";
